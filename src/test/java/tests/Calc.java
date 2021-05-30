@@ -55,6 +55,11 @@ assertEquals("1", searchPage.getresult());
 
     @Test
     public void test12 () {
-
+        searchPage.six.click();
+        searchPage.divi.click();
+        searchPage.zero.click();
+        searchPage.eq.click();
+        assertEquals("6 ÷ 0 =", searchPage.getnumbers());
+        assertEquals("Infinity", searchPage.getresult());
     }
 }
