@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -61,5 +62,17 @@ assertEquals("1", searchPage.getresult());
         searchPage.eq.click();
         assertEquals("6 ÷ 0 =", searchPage.getnumbers());
         assertEquals("Infinity", searchPage.getresult());
+    }
+
+    @Test
+    public void  test3 () {
+       searchPage.sin.click();
+       searchPage.eq.click();
+        assertEquals("sin() =", searchPage.getnumbers());
+        assertEquals("Error", searchPage.getresult());
+    }
+    @AfterAll
+    public static void teardown() {
+        driver.quit();
     }
 }
